@@ -3,8 +3,16 @@ import github
 
 import math
 import os
+import sys
 
-user = os.getenv('GH_USER')
+
+try:
+    user = os.environ['GH_USER']
+except KeyError:
+    sys.stderr.write('Please set GH_USER environment variable to your github'
+                     ' username.\n')
+    sys.exit(2)
+
 gh = github.GitHub()
 
 # number of results per page, github default is 30:
