@@ -59,8 +59,17 @@ def n_public_repos(gh, user):
 def main():
     gh = github.GitHub()
     user = os.getenv('GH_USER')
-    for i in reponames(gh, user):
-        print (i)
+    try:
+        if sys.argv[1] == 'url':
+            for u in urls(gh,user):
+                print (u)
+        else:
+            for i in reponames(gh, user):
+                print (i)
+    except IndexError:
+        for i in reponames(gh, user):
+            print (i)
+
 
 
 if __name__ == "__main__":
