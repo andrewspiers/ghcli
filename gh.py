@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import github
+import requests
 
 import math
 import os
