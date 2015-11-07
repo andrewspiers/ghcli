@@ -59,13 +59,6 @@ def n_public_repos(gh, user):
 def main():
     gh = github.GitHub()
     user = os.getenv('GH_USER')
-    # print (getuser(gh, user))
-    # print (getuserrepos(gh, user))
-    # for i in getuserrepos_keys(gh, user):
-    #    print (i)
-    #    continue
-    # print n_public_repos(gh, user)
-    # print('\n\n\n')
     for i in reponames(gh, user):
         print (i)
 
